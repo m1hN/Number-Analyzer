@@ -18,7 +18,7 @@ function analyzeNumber() {
   document.getElementById("digits").innerHTML = numDigits(numInput);
 
   //**BONUS**//
-  //document.getElementById('prime').innerHTML = isPrime(numInput);
+  document.getElementById("prime").innerHTML = isPrime(numInput);
 }
 
 // Analyze Functions - Add your functions below. These should match the named functions above (e.g. getSign). When ready to test, uncomment the appropriate line in analyzeNumber before running.
@@ -74,4 +74,23 @@ function numDigits(num) {
   }
 
   return numCount;
+}
+
+function isPrime(num) {
+  let prime;
+  if (num == 1 || num == 2) {
+    prime = true;
+  } else if (num == 0) {
+    prime = false;
+  }
+
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+      prime = false;
+      break;
+    } else {
+      prime = true;
+    }
+  }
+  return prime;
 }
